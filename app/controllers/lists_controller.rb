@@ -32,7 +32,7 @@ class ListsController < ApplicationController
     redirect_to list_path(@list)
   end
 
-  def restaurant_params
+  def list_params
     params.require(:list).permit(:name)
   end
 end
