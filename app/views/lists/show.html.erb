@@ -7,11 +7,17 @@
 <br>
 <br>
 <%= link_to 'New movie', new_list_bookmark_path(@list), class: "btn btn-success"%>
-</div>
+<br>
+<br>
 
 <% @list.bookmarks.each do |b| %>
-<%= b.movie.title %>
-<%= b.movie.overview %>
-<%= b.movie.poster_url %>
-<%= b.movie.rating %>
+<div>
+<p><%= b.movie.title %></p>
+<p><%= b.movie.overview %></p>
+<p><%= b.movie.poster_url %></p>
+<p>starts: <%= b.movie.rating %></p>
+<%= link_to 'Delete', bookmark_path(b), method: :delete, data: {confirm: 'Are you sure?'} %>
+</div>
 <% end %>
+
+</div>
